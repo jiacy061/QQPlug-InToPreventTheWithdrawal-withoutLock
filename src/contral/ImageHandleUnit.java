@@ -88,11 +88,12 @@ public class ImageHandleUnit {
 		for(int i=0, len=savedFileList.size(); i<len; i++) {
 			ImageBag imageBag = savedFileList.get(i);
 			System.out.println("HandleUnit::i="+i+";len="+len);
-			if( (millis - imageBag.getMillis()) > maxHoldTime && !imageBag.isWithdrawal()) {
+			if( (millis - imageBag.getMillis()) > minHoldTime && !imageBag.isWithdrawal()) {
 				File file = imageBag.getFile();
 				System.out.println("i="+i+";len="+len+";file="+file);
 				file.delete();
 				savedFileList.remove(i);
+				savedFileNameList.remove(imageBag.getImageName());
 				i--;
 				len--;
 			}

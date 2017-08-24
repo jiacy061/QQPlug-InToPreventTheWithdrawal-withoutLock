@@ -17,7 +17,7 @@ public class ImageHandleThread extends Thread {
 	private File[] imageFiles;
 	private long lastModifyTime;
 	private boolean runFlag;
-	private final int flushInterval = 100; // Ë¢ÐÂ¼ä¸ô1000ºÁÃë
+	private final int flushInterval = 100; // Ë¢ÐÂ¼ä¸ô100ºÁÃë
 	
 	public ImageHandleThread(ImageHandleUnit imageHandleUnit, String path) {
 		this.imageHandleUnit = imageHandleUnit;
