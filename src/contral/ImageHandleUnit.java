@@ -27,14 +27,17 @@ public class ImageHandleUnit {
 		File[] fs = file.listFiles();
 		for(File f : fs) {
 			if(f.isFile()) {
+				if("showPic.jpg".equals(f.getName())) {
+					f.delete();
+					continue;
+				}
+				
 				ImageBag imageBag = new ImageBag(f, "ȫѡ");
 				imageBag.setWithdrawal(true);
 				savedFileList.add(imageBag);
 				savedFileNameList.add(f.getName());
 			}
 		}
-		System.out.println("** list len:"+savedFileList.size());
-		System.out.println("&& list len:"+savedFileNameList.size());
 	}
 
 	public void startAll() {
